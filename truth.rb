@@ -39,8 +39,7 @@ post '/truth' do
   if symbols_invalid(truth_symbol, false_symbol, size)
     erb :invalid_parameters
   else
-    erb :truth, locals: { truth_symbol: truth_symbol, false_symbol:
-        false_symbol, size: size }
+    erb :truth, locals: { size: size }
   end
 end
 

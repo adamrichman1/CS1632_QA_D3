@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Requirement #2</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test home page link</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Reload Page<datalist><option>link=Reload Page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size 2^x:'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False symbol:'])[1]/following::a[1]</option><option>//a[contains(text(),'Reload Page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertLocation</td><td>http://localhost:4567/<datalist><option>localhost:4567</option><option>http://localhost:4567</option><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test invalid url link</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/hello<datalist><option>http://localhost:4567/hello</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Main Page<datalist><option>link=Main Page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Invalid address.'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::a[1]</option><option>//a[contains(text(),'Main Page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertLocation</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test invalid parameters link</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=truth_symbol<datalist><option>name=truth_symbol</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Truth symbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False symbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size 2^x:'])[1]/preceding::input[2]</option><option>//input[@name='truth_symbol']</option><option>//input</option><option>css=input[name="truth_symbol"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=truth_symbol<datalist><option>name=truth_symbol</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Truth symbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False symbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size 2^x:'])[1]/preceding::input[2]</option><option>//input[@name='truth_symbol']</option><option>//input</option><option>css=input[name="truth_symbol"]</option></datalist></td><td>T</td>
+</tr>
+<tr><td>type</td><td>name=false_symbol<datalist><option>name=false_symbol</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False symbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Truth symbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size 2^x:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload Page'])[1]/preceding::input[3]</option><option>//input[@name='false_symbol']</option><option>//input[2]</option><option>css=input[name="false_symbol"]</option></datalist></td><td>T</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size 2^x:'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size 2^x:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False symbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload Page'])[1]/preceding::input[1]</option><option>//input[@value='Submit']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Main Page<datalist><option>link=Main Page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Invalid parameters.'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::a[1]</option><option>//a[contains(text(),'Main Page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertLocation</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test truth table page link</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size 2^x:'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size 2^x:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False symbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload Page'])[1]/preceding::input[1]</option><option>//input[@value='Submit']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Main Page<datalist><option>link=Main Page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[24]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[23]/following::a[1]</option><option>//a[contains(text(),'Main Page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertLocation</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,16 +1,22 @@
 <html>
 <body>
 <table>
+  <%# Write column labels 0 to s-1 %>
   <%s = size-1%>
   <%while s >= 0%>
     <th><%=s%></th>
     <%s = s-1%>
   <%end%>
+
+  <%# Write column labels for computational logic %>
   <th>AND</th>
   <th>OR</th>
   <th>XOR</th>
 
+  <%# Get truth table value permutations list %>
   <% values = display_t_f %>
+
+  <%# Display truth table values %>
   <% row_index = (2**size)-1%>
   <%while row_index >= 0%>
     <tr>
@@ -19,11 +25,9 @@
         <td><%= values[row_index].to_a[column_index] %></td>
         <% column_index-=1%>
       <%end%>
-      <%# AND %>
+      <%# Complete computational logic in backend %>
       <td><%=comp_and(values[row_index].to_a)%></td>
-      <%# OR %>
       <td><%=comp_or(values[row_index].to_a)%></td>
-      <%# XOR %>
       <td><%=comp_xor(values[row_index].to_a)%></td>
     </tr>
     <% row_index-=1%>

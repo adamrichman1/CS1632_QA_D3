@@ -1,24 +1,34 @@
 <html>
-  <head></head>
-  <body>
-    <h1>
-    ERROR
-    </h1>
-    <h2>
-      Here is some info:
-      </h2>
-    <p>
-    This page does not exist.
-    <p>
-      <h2>
-	Detailed info:
-      </h2>
-      <p>
-      I dunno.
-      <p>
-      <p>
-      Here is a cute dog -> . (it's very small)
-      <p>
-    <a href="/">Back to main</a>
-  </body>
+<body>
+<table>
+  <%s = size-1%>
+  <%while s >= 0%>
+    <th><%=s%></th>
+    <%s = s-1%>
+  <%end%>
+  <th>AND</th>
+  <th>OR</th>
+  <th>XOR</th>
+
+  <% values = display_t_f %>
+  <% row_index = (2**size)-1%>
+  <%while row_index >= 0%>
+    <tr>
+      <% column_index=size-1%>
+      <%while column_index >= 0%>
+        <td><%= values[row_index].to_a[column_index] %></td>
+        <% column_index-=1%>
+      <%end%>
+      <%# AND %>
+      <td><%=comp_and(values[row_index].to_a)%></td>
+      <%# OR %>
+      <td><%=comp_or(values[row_index].to_a)%></td>
+      <%# XOR %>
+      <td><%=comp_xor(values[row_index].to_a)%></td>
+    </tr>
+    <% row_index-=1%>
+  <%end%>
+</table>
+<a href='/'>Main Page</a>
+</body>
 </html>

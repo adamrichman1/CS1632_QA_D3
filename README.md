@@ -2,7 +2,7 @@
 
 CS 1632 - DELIVERABLE 3: Automated System Testing of a Web Application
 
-## Authors
+## Author
 * [Adam Richman](https://www.github.com/adamrichman1) (GitHub: adamrichman1)
 
 ### Project URL
